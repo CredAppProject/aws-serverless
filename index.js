@@ -13,8 +13,8 @@ exports.handler = async (event) => {
     try {
         await client.connect();
 
-        const database = client.db('test');
-        const collection = database.collection('users');
+        const database = client.db(process.env.DATABASE_NAME);
+        const collection = database.collection(process.env.COLLECTION_NAME);
 
         // Parse the username and password from the event body
         const body = JSON.parse(event.body);
