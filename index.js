@@ -8,7 +8,7 @@ const User = require('./User');
 
 exports.handler = async (event) => {
     const uri = process.env.MONGODB_URI;
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
     try {
         await client.connect();
